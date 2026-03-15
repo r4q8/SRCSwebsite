@@ -1,0 +1,75 @@
+<!doctype html>
+<html lang="en" xmlns="http://www.w3.org/1999/html">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <link rel="stylesheet" href="css/style.css">
+  <link rel="icon" href="/srcs.ico" sizes="any">
+  <link rel="icon" href="/srcs.ico" type="image/svg+xml">
+  <link rel="apple-touch-icon" href="srcs.ico">
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;700&family=Montserrat:wght@800&display=swap" rel="stylesheet">
+  <link rel="manifest" href="site.webmanifest">
+  <meta name="theme-color" content="#fafafa">
+  <script src="/js/app.js"></script>
+</head>
+
+<body>
+<header class="header">
+  <div class="navbar">
+    <img src="srcs.png" class="logo">
+    <div class="nav-name">生電伺服Survival Redstone Craft Server</div>
+    <ul class="nav-links">
+      <li><a class="nav-btn" href="#Team" data-en="Team" data-zh="團隊">Team</a></li>
+      <li><a class="nav-btn" href="https://discord.gg/WEMrUDsU6f" data-en="Discord" data-zh="官方">Discord</a></li>
+      <li><a class="nav-btn" onclick="toggleLanguage()" id="langBtn">EN/繁體</a></li>
+      <li><a class="nav-btn" onclick="toggleTheme()" id="themeBtn" data-en-dark="🌙 Dark" data-zh-dark="🌙 深色" data-en-light="☀️ Light" data-zh-light="☀️ 淺色">🌙 Dark</a></li>
+    </ul>
+  </div>
+</header>
+
+<main class="main">
+  <section class="hero">
+    <h1 data-en="SRCS Mc Server" data-zh="SRCS 麥塊 伺服器">SRCS Mc Server</h1>
+  </section>
+</main>
+
+<div class="container">
+</div>
+
+<div class="container" id="Team">
+  <h1 class="section-title" data-en="Staff Team" data-zh="伺服器團隊">Staff Team</h1>
+  <div class="staff-card">
+    <h2 style="color: var(--primary-color); font-size: 2rem;">RiceTall</h2>
+    <p>Owner</p>
+  </div>
+  <div class="staff-card">
+    <h2 style="color: var(--primary-color); font-size: 2rem;">wowp1323</h2>
+    <p>Co-Owner</p>
+  </div>
+</div>
+
+<div class="container">
+  <h1 class="section-title" data-en="Server Introduce" data-zh="伺服器介紹">Server Introduce</h1>
+</div>
+
+<div class="container">
+  <h1 class="section-title" data-en="Server Whitelist" data-zh="伺服器白名單">Server Whitelist</h1>
+</div>
+
+<div id="cookie-notice" class="cookie-notice">
+  <p data-en='This website uses cookies to remember language and theme settings to provide a better user experience.'
+     data-zh='本網站使用 Cookies 以記住語言與主題設定，提供更好的使用體驗。'>This website uses cookies to remember language and theme settings to provide a better user experience.
+  </p>
+  <button onclick="acceptCookies()" data-en="Done" data-zh="了解並關閉">Done</button>
+</div>
+
+<footer>
+  <div class="bottom">
+    <div class="left">Copyright © 2025 SRCS Mc Server. All Rights Reserved.
+    </div>
+  </div>
+</footer>
+
+</body>
+
+</html>
