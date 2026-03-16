@@ -1,6 +1,7 @@
 :root {
   --primary-color: #8539ff;
   --bg-color: #0b0b12;
+  --card-bg: rgba(255, 255, 255, 0.1);
   --text-color: #ffffff;
   --text-dim: rgba(255, 255, 255, 0.7);
   --navbar-bg: rgba(41, 41, 56, 0.3);
@@ -26,13 +27,14 @@ body {
 
 body.light-mode {
   --bg-color: #f5f5f7;
-  --card-bg: rgba(255, 255, 255, 0.05);
   --card-bg-hover: rgba(255, 255, 255, 0.1);
-  --card-border: rgba(255, 255, 255, 0.1);
-  --card-bg-full-a: rgba(255, 255, 255, 100%);
-  --card-bg-hover-full-a: rgba(255, 255, 255, 100%);
-  --text-color: #1d1d1f;
+  --card-bg-full-a: rgba(255, 255, 255, 80%);
+  --card-bg-hover-full-a: rgba(255, 255, 255, 80%);
   --text-dim: #484848;
+  --card-bg: rgba(255, 255, 255, 0.05);
+  --card-border: rgba(255, 255, 255, 0.1);
+  --text-color: #333333;
+  --body-bg: #f5f5f5;
   body.light-mode {
     --hover-bg: radial-gradient(
       circle at top left,
@@ -121,6 +123,7 @@ body.light-mode {
   color: white;
 }
 
+
 .hero {
   position: relative;
   height: 100vh;
@@ -164,31 +167,144 @@ body.light-mode {
   margin-bottom: 20px;
 }
 
+.group-title {
+  font-family: 'Montserrat', sans-serif;
+  font-size: 1.5rem;
+  color: var(--text-dim);
+  margin: 40px 0 20px;
+  text-transform: uppercase;
+  letter-spacing: 2px;
+}
+
+.staff-group {
+  width:auto;
+  margin-bottom: 10px;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  min-height: auto;
+}
+
+.group-title {
+  width: 100%;
+  text-align: center;
+  font-family: 'Montserrat', sans-serif;
+  font-size: 1.2rem;
+  color: var(--text-dim);
+  margin-bottom: 25px;
+  letter-spacing: 3px;
+}
+
+.staff-grid {
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: center;
+  gap: 20px;
+  width: 100%;
+  max-width: 1000px;
+}
+
+.staff-container {
+  display: flex;
+  min-height: 10vh;
+  justify-content: center;
+  gap: 20px;
+}
+
 .staff-card {
-  background: rgba(255, 255, 255, 0.05);
-  border: 1px solid rgba(255, 255, 255, 0.1);
-  padding: 40px;
+  position: relative;
+  background: var(--card-bg);
+  border: 1px solid var(--card-border);
+  color: var(--text-color);
+  padding: 25px;
   border-radius: 30px;
   display: inline-block;
-  transition: 0.3s;
+  transition: all 0.4s cubic-bezier(0.175, 0.885, 0.32, 1.275);
+  overflow: hidden;
+  box-shadow: 0 10px 30px rgba(0, 0, 0, 0.2);
+}
+
+.staff-card h2 {
+  color: var(--text-color);
+  font-size: 1.4rem;
+  letter-spacing: 0.5px;
+  margin: 0;
+}
+
+.staff-card p {
+  color: var(--primary-color);
+  font-size: 0.85rem;
+  font-weight: 700;
+  text-transform: uppercase;
+  letter-spacing: 1px;
+  opacity: 0.9;
 }
 
 .staff-card:hover {
-  transform: translateY(-10px);
-  background: rgba(255, 255, 255, 0.08);
+  transform: translateY(-12px);
+  border-color: var(--primary-color);
+  box-shadow: 0 20px 40px -15px rgba(133, 57, 255, 0.3);
 }
+
+.whitelist-container {
+  display: flex;
+  min-height: 10vh;
+  justify-content: center;
+  gap: 20px;
+}
+
+.whitelist-card {
+  position: relative;
+  width: 400px;
+  min-height: 500px;
+  background: var(--card-bg);
+  border: 1px solid var(--card-border);
+  border-radius: 24px;
+  backdrop-filter: blur(15px);
+  -webkit-backdrop-filter: blur(15px);
+  display: flex;
+  flex-direction: column;
+  padding: 40px;
+  font-size: 1.2rem;
+  color: var(--text-color);
+  transition: all 0.4s cubic-bezier(0.175, 0.885, 0.32, 1.275);
+  overflow: hidden;
+  box-shadow: 0 10px 30px rgba(0, 0, 0, 0.2);
+}
+
+.whitelist-card h2 {
+  color: var(--text-color);
+  font-size: 1.4rem;
+  letter-spacing: 0.5px;
+  margin: 0;
+}
+
+.whitelist-card p {
+  color: var(--primary-color);
+  font-size: 0.85rem;
+  font-weight: 700;
+  text-transform: uppercase;
+  letter-spacing: 1px;
+  opacity: 0.9;
+}
+
+.whitelist-card:hover {
+  transform: translateY(-12px);
+  border-color: var(--primary-color);
+  box-shadow: 0 20px 40px -15px rgba(133, 57, 255, 0.3);
+}
+
 
 .cookie-notice {
   position: fixed;
   right: 20px;
   bottom: 20px;
-  max-width: 320px;
+  max-width: 350px;
   background: rgba(20, 20, 20, 0.95);
   backdrop-filter: blur(10px);
   color: #ffffff;
   padding: 20px;
   border-radius: 15px;
-  font-size: 14px;
   box-shadow: 0 8px 25px rgba(0, 0, 0, 0.5);
   z-index: 9999;
   border: 1px solid rgba(255, 255, 255, 0.1);
