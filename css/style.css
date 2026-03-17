@@ -23,26 +23,23 @@ body {
   color: var(--text-color);
   overflow-x: hidden;
   line-height: 1.6;
+  transition: background-color 0.3s, color 0.3s;
 }
 
 body.light-mode {
-  --bg-color: #f5f5f7;
-  --card-bg-hover: rgba(255, 255, 255, 0.1);
-  --card-bg-full-a: rgba(255, 255, 255, 80%);
-  --card-bg-hover-full-a: rgba(255, 255, 255, 80%);
-  --text-dim: #484848;
-  --card-bg: rgba(255, 255, 255, 0.05);
-  --card-border: rgba(255, 255, 255, 0.1);
-  --text-color: #333333;
-  --body-bg: #f5f5f5;
-  body.light-mode {
-    --hover-bg: radial-gradient(
-      circle at top left,
-      rgba(255, 73, 73, 0.1),
-      transparent 60%
-    );
-  }
-
+  --bg-color: #f0f2f5;
+  --text-color: #2c3e50;
+  --text-dim: #5f6368;
+  --body-bg: rgba(240, 242, 245, 0.9);
+  --card-bg: #ffffff;
+  --card-bg-hover: #fafafa;
+  --card-border: rgba(0, 0, 0, 0.05);
+  --hover-bg: radial-gradient(
+          circle at top left,
+          rgba(255, 73, 73, 0.03),
+          transparent 70%
+  );
+  --card-shadow: 0 4px 12px rgba(0, 0, 0, 0.05);
 }
 
 .header {
@@ -246,6 +243,54 @@ body.light-mode {
   box-shadow: 0 20px 40px -15px rgba(133, 57, 255, 0.3);
 }
 
+.introduce-container {
+  display: flex;
+  min-height: 10vh;
+  justify-content: center;
+  gap: 20px;
+}
+
+.introduce-card {
+  position: relative;
+  width: auto;
+  min-height: auto;
+  background: var(--card-bg);
+  border: 1px solid var(--card-border);
+  border-radius: 24px;
+  backdrop-filter: blur(15px);
+  -webkit-backdrop-filter: blur(15px);
+  display: flex;
+  flex-direction: column;
+  padding: 40px;
+  font-size: 1.2rem;
+  color: var(--text-color);
+  transition: all 0.4s cubic-bezier(0.175, 0.885, 0.32, 1.275);
+  overflow: hidden;
+  box-shadow: 0 10px 30px rgba(0, 0, 0, 0.2);
+}
+
+.introduce-card h2 {
+  color: var(--text-color);
+  font-size: 1.4rem;
+  letter-spacing: 0.5px;
+  margin: 0;
+}
+
+.introduce-card p {
+  color: var(--primary-color);
+  font-size: 0.85rem;
+  font-weight: 700;
+  text-transform: uppercase;
+  letter-spacing: 1px;
+  opacity: 0.9;
+}
+
+.introduce-card:hover {
+  transform: translateY(-12px);
+  border-color: var(--primary-color);
+  box-shadow: 0 20px 40px -15px rgba(133, 57, 255, 0.3);
+}
+
 .whitelist-container {
   display: flex;
   min-height: 10vh;
@@ -256,7 +301,7 @@ body.light-mode {
 .whitelist-card {
   position: relative;
   width: auto;
-  min-height: auto;
+  min-height: 100px;
   background: var(--card-bg);
   border: 1px solid var(--card-border);
   border-radius: 24px;
