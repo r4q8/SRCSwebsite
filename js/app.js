@@ -183,3 +183,22 @@ function acceptCookies() {
   const notice = document.getElementById("cookie-notice");
   if (notice) notice.style.display = "none";
 }
+
+document.querySelectorAll('.yt-profile-card').forEach(card => {
+  const url = card.href;
+  const name = card.getAttribute('data-name');
+
+  // 1. 從網址提取 Handle (例如 @MrBeast)
+  const handleMatch = url.match(/@[\w\.-]+/);
+  const handle = handleMatch ? handleMatch[0] : '';
+
+  if (handle) {
+    // 2. 自動設定頭貼 (利用 unavatar 服務)
+    const avatarImg = card.querySelector('.yt-avatar');
+    avatarImg.src = `https://unavatar.io/youtube/${handle}`;
+
+    // 3. 自動設定名字 (如果有設定 data-name 就用它，沒有就顯示 handle)
+    const nameText = card.querySelector('.yt-name');
+    nameText.innerText = name || handle;
+  }
+});

@@ -175,71 +175,38 @@ body.light-mode {
 .staff-card {
   position: relative;
   background: var(--card-bg);
-  backdrop-filter: blur(10px);
-  -webkit-backdrop-filter: blur(10px);
   border: 1px solid var(--card-border);
-  padding: 30px 40px;
-  border-radius: 24px;
-  text-align: center;
-  min-width: 200px;
   color: var(--text-color);
-  transition: all 0.5s cubic-bezier(0.23, 1, 0.32, 1);
+  padding: 25px;
+  border-radius: 30px;
+  display: inline-block;
+  transition: all 0.4s cubic-bezier(0.175, 0.885, 0.32, 1.275);
   overflow: hidden;
-  cursor: default;
-}
-
-/* 滑鼠懸停效果 */
-.staff-card:hover {
-  transform: translateY(-10px) scale(1.02);
-  border-color: rgba(133, 57, 255, 0.5);
-  box-shadow: 0 25px 50px -12px rgba(0, 0, 0, 0.5);
-  background: rgba(255, 255, 255, 0.08);
+  box-shadow: 0 10px 30px rgba(0, 0, 0, 0.2);
 }
 
 .staff-card h2 {
   color: var(--text-color);
-  font-size: 1.5rem;
-  font-weight: 600;
-  margin-bottom: 8px;
-  position: relative;
-  z-index: 1;
+  font-size: 1.4rem;
+  letter-spacing: 0.5px;
+  margin: 0;
 }
 
 .staff-card p {
-  background: var(--card-bg);
-  color: var(--text-color);
-  -webkit-background-clip: text;
-  -webkit-text-fill-color: transparent;
-  font-size: 0.75rem;
-  font-weight: 800;
+  color: var(--primary-color);
+  font-size: 0.85rem;
+  font-weight: 700;
   text-transform: uppercase;
-  letter-spacing: 2px;
-  margin: 0;
-  position: relative;
-  z-index: 1;
+  letter-spacing: 1px;
+  opacity: 0.9;
 }
 
-.staff-card::before {
-  content: "";
-  position: absolute;
-  top: 0;
-  left: -100%;
-  width: 100%;
-  height: 100%;
-  background: linear-gradient(
-          90deg,
-          transparent,
-          rgba(255, 255, 255, 0.1),
-          transparent
-  );
-  transition: 0.5s;
+.staff-card:hover {
+  transform: translateY(-12px);
+  border-color: var(--primary-color);
+  box-shadow: 0 20px 40px -15px rgba(133, 57, 255, 0.3);
 }
 
-.staff-card:hover::before {
-  left: 100%;
-}
-
-/* 標題裝飾 (Group Title) */
 .group-title {
   text-align: center;
   margin: 40px 0 20px;
@@ -297,14 +264,14 @@ body.light-mode {
   box-shadow: 0 20px 40px -15px rgba(133, 57, 255, 0.3);
 }
 
-.whitelist-container {
+.ytr-container {
   display: flex;
   min-height: 10vh;
   justify-content: center;
   gap: 20px;
 }
 
-.whitelist-card {
+.ytr-card {
   position: relative;
   width: auto;
   min-height: auto;
@@ -323,14 +290,14 @@ body.light-mode {
   box-shadow: 0 10px 30px rgba(0, 0, 0, 0.2);
 }
 
-.whitelist-card h2 {
+.ytr-card h2 {
   color: var(--text-color);
   font-size: 1.4rem;
   letter-spacing: 0.5px;
   margin: 0;
 }
 
-.whitelist-card p {
+.ytr-card p {
   color: var(--primary-color);
   font-size: 0.85rem;
   font-weight: 700;
@@ -339,7 +306,7 @@ body.light-mode {
   opacity: 0.9;
 }
 
-.whitelist-card:hover {
+.ytr-card:hover {
   transform: translateY(-12px);
   border-color: var(--primary-color);
   box-shadow: 0 20px 40px -15px rgba(133, 57, 255, 0.3);
@@ -377,6 +344,133 @@ footer {
   text-align: center;
   background: rgba(0, 0, 0, 0.3);
   color: var(--text-dim);
+}
+
+.player-name {
+  border: none;
+  position: relative;
+  font-weight: bold;
+  color: var(--rank-color);
+  cursor: pointer;
+  text-decoration: underline transparent;
+  transition: all 0.2s;
+}
+
+.player-name:hover {
+  text-decoration: underline var(--rank-color);
+  filter: brightness(1.2);
+}
+
+.player-tooltip {
+  background: var(--card-bg-hover);
+  visibility: hidden;
+  opacity: 0;
+  position: absolute;
+  bottom: 130%;
+  left: 50%;
+  transform: translateX(-50%) translateY(10px);
+  background: #1a1a1a;
+  border: 2px solid var(--rank-color);
+  border-radius: 10px;
+  padding: 12px;
+  width: 160px;
+  text-align: center;
+  z-index: 1000;
+  transition: all 0.3s cubic-bezier(0.18, 0.89, 0.32, 1.28);
+  box-shadow: 0 10px 20px rgba(0,0,0,0.5);
+  color: #fff;
+}
+
+.player-name:hover .player-tooltip {
+  background: var(--card-bg-hover);
+  visibility: visible;
+  opacity: 1;
+  transform: translateX(-50%) translateY(0);
+}
+
+.tooltip-ign {
+  display: block;
+  color: var(--rank-color);
+  font-size: 18px;
+  font-weight: 800;
+  margin-top: 5px;
+}
+
+.tooltip-rank {
+  display: block;
+  color: var(--text-color);
+  font-size: 13px;
+  font-weight: bold;
+  margin-bottom: 5px;
+  border-bottom: 1px solid #444;
+  padding-bottom: 5px;
+}
+
+.tooltip-skill {
+  display: block;
+  color: var(--text-color);
+  font-size: 11px;
+  line-height: 1.4;
+}
+
+.player-tooltip::after {
+  content: "";
+  position: absolute;
+  top: 100%;
+  left: 50%;
+  margin-left: -8px;
+  border-width: 8px;
+  border-style: solid;
+  border-color: var(--rank-color) transparent transparent transparent;
+}
+
+.yt-profile-card {
+  display: flex;
+  align-items: center;
+  width: 300px;
+  padding: 15px;
+  background: var(--card-bg);
+  border-radius: 16px;
+  box-shadow: 0 4px 15px rgba(0,0,0,0.1);
+  text-decoration: none; /* 移除超連結下劃線 */
+  color: var(--text-color);
+  transition: all 0.3s ease;
+  border: 1px solid #eee;
+}
+
+.yt-profile-card:hover {
+  transform: translateY(-3px);
+  box-shadow: 0 6px 20px rgba(0,0,0,0.15);
+  border-color: #ff0000; /* 懸停時變紅色 border */
+}
+
+.avatar-container {
+  margin-right: 15px;
+}
+
+#yt-avatar {
+  width: 60px;
+  height: 60px;
+  border-radius: 50%;
+  object-fit: cover;
+  border: 2px solid #f1f1f1;
+}
+
+.info-container {
+  display: flex;
+  flex-direction: column;
+}
+
+#yt-name {
+  margin: 0;
+  font-size: 1.1rem;
+  font-weight: bold;
+}
+
+.sub-text {
+  font-size: 0.85rem;
+  color: #606060;
+  margin-top: 4px;
 }
 
 @media (max-width: 992px) {
