@@ -17,8 +17,9 @@
     <img src="srcs.png" class="logo">
     <div class="nav-name">生電伺服器Survival Redstone Craft Server</div>
     <ul class="nav-links">
-      <li><a class="nav-btn" href="#Home">Home</a></li>
+      <li><a class="nav-btn" href="#Home" data-en="Home" data-zh="首頁">Home</a></li>
       <li><a class="nav-btn" href="#Team" data-en="Team" data-zh="團隊">Team</a></li>
+      <li><a class="nav-btn" href="#ytr" data-en="Youtuber" data-zh="創作者">Youtuber</a></li>
       <li><a class="nav-btn" target="_blank" href="https://discord.gg/WEMrUDsU6f" data-en="Discord" data-zh="加入我們">Discord</a></li>
       <li><a class="nav-btn" onclick="toggleLanguage()" id="langBtn">EN/繁體</a></li>
       <li><a class="nav-btn" onclick="toggleTheme()" id="themeBtn" data-en-dark="🌙 Dark" data-zh-dark="🌙 深色" data-en-light="☀️ Light" data-zh-light="☀️ 淺色">🌙 Dark</a></li>
@@ -59,9 +60,9 @@
 <div class="container">
   <h1 class="section-title" data-en="Server Introduce" data-zh="伺服器介紹">Server Introduce</h1>
   <div class="introduce-container">
-    <h1 data-en="This survival server owner is RiceTall_0219"
+    <h1 data-en="This server owner is RiceTall_0219"
         data-zh="這個伺服器的服主是RiceTall_0219">
-      This survival server owner is RiceTall_0219
+      This server owner is RiceTall_0219
     </h1>
     </div>
   <div class="introduce-container">
@@ -69,85 +70,63 @@
         data-zh="而這伺服器是架設在CheapServer.tw">
       And then this server is host on CheapServer.tw
     </h2>
-    </div>
-  <div class="introduce-container">
-    <h2 data-en="We r using CheapServer TW-X-WTF pc to host"
-        data-zh="我們使用的是他們的TW-X-WTF主機架設">
-      We r using CheapServer TW-X-WTF pc to host
+  </div>  
+  <div class="introduce-container">  
+    <h2 data-en="We are using their high-speed mainframe"
+        data-zh="我們使用的是他們的高階主機架設">
+      We are using their high-speed mainframe
     </h2>
-    </div>
-  <div class="introduce-container">
-    <h2 data-en="If u want to join us, pls join our discord server to use the ticket,to get the whitelist"
-        data-zh="如果你想加入我們，請麻煩轉至discord伺服器填寫表單，去獲得白名單">
-      If u want to join us, pls join our discord server to use the ticket,to get the whitelist
+  </div>
+  <div class="introduce-container">  
+    <h2 data-en="If u want to join us, pls join our discord server to use ticket,to get the whitelist."
+        data-zh="如果你想加入我們，煩請轉至discord伺服器填寫表單，去獲得白名單">
+      If u want to join us, pls join our discord server to use ticket,to get the whitelist.
     </h2>
   </div>
 </div>
 
-<div class="container">
-  <h1 class="section-title" data-en="Server Youtuber" data-zh="伺服器創作者">Server Youtuber</h1>
-  <div class="staff-container">
-    <a href="https://www.youtube.com/@RiceTall" class="yt-profile-card" data-name="米糕不是內閣">
-      <div class="avatar-container">
-        <img class="yt-avatar" src="" alt="Loading...">
-      </div>
-      <div class="info-container">
-        <h3 class="yt-name">載入中...</h3>
-        <span class="sub-text">前往 YouTube 頻道</span>
-      </div>
-    </a>
+<div class="container" id="ytr">
+  <h1 class="section-title" data-en="YTR Introduction" data-zh="YTR 介紹">YTR 介紹</h1>
+  <div class="ytr-container">
+    <div class="ytr-card">
+      <div class="yt-profile-card">
+        <div class="avatar-container">
+          <img id="yt-avatar" src="channels4_profile (1).jpg" href="https://www.youtube.com/@RiceTall" alt="YTR 頭貼"></div>
+          <div class="info-container">  
+          <h2 id="yt-name">米糕不是內閣</h2></div>
+      </div>    
 
-    <a href="https://www.youtube.com/@Coolcat_awa" class="yt-profile-card" data-name="涼貓cool cat">
-      <div class="avatar-container">
-        <img class="yt-avatar" src="" alt="Loading...">
+      <div class="yt-profile-card">
+        <div class="avatar-container">
+          <img id="yt-avatar" src="channels4_profile.jpg" href="https://www.youtube.com/@Coolcat_awa" alt="YTR 頭貼"></div>
+          <div class="info-container">
+          <h2 id="yt-name">涼貓cool cat</h2></div>
       </div>
-      <div class="info-container">
-        <h3 class="yt-name">載入中...</h3>
-        <span class="sub-text">前往 YouTube 頻道</span>
-      </div>
-    </a>
 
-    <a href="https://www.youtube.com/@w.a.t.e.r.m.o.o.n" class="yt-profile-card" data-name="水月">
-      <div class="avatar-container">
-        <img class="yt-avatar" src="" alt="Loading...">
+      <div class="yt-profile-card">
+        <div class="avatar-container">
+          <img id="yt-avatar" src="channels4_profile (2).jpg" href="https://www.youtube.com/@w.a.t.e.r.m.o.o.n" alt="YTR 頭貼"></div>
+          <div class="info-container">
+          <h2 id="yt-name">水月</h2></div>
       </div>
-      <div class="info-container">
-        <h3 class="yt-name">載入中...</h3>
-        <span class="sub-text">前往 YouTube 頻道</span>
-      </div>
-    </a>
+      
+      <div class="yt-profile-card">
+        <div class="avatar-container">
+          <img id="yt-avatar" src="channels4_profile (3).jpg" href="https://www.youtube.com/@Minecraft_bedwars_noob" alt="YTR 頭貼"></div>
+          <div class="info-container">
+          <h2 id="yt-name">Bedwarsnoob_TW</h2></div>
+      </div>            
 
-    <a href="https://www.youtube.com/@Minecraft_bedwars_noob" class="yt-profile-card" data-name="Bedwarsnoob_TW">
-      <div class="avatar-container">
-        <img class="yt-avatar" src="" alt="Loading...">
-      </div>
-      <div class="info-container">
-        <h3 class="yt-name">載入中...</h3>
-        <span class="sub-text">前往 YouTube 頻道</span>
-      </div>
-    </a>
+      <div class="yt-profile-card">
+        <div class="avatar-container">
+          <img id="yt-avatar" src="channels4_profile (4).jpg" href="https://www.youtube.com/@Jerry.game083" alt="YTR 頭貼"></div>
+          <div class="info-container">
+          <h2 id="yt-name">傑瑞Jerry</h2></div>
+      </div>            
 
-    <a href="https://www.youtube.com/@Jerry.game083" class="yt-profile-card" data-name="傑瑞Jerry">
-      <div class="avatar-container">
-        <img class="yt-avatar" src="" alt="Loading...">
-      </div>
-      <div class="info-container">
-        <h3 class="yt-name">載入中...</h3>
-        <span class="sub-text">前往 YouTube 頻道</span>
-      </div>
-    </a>
-
-    <a href="https://youtube.com/@yozi487?si=w87JIt0glW0MoJB2" class="yt-profile-card" data-name="𝐘𝐨𝐳𝐢">
-      <div class="avatar-container">
-        <img class="yt-avatar" src="" alt="Loading...">
-      </div>
-      <div class="info-container">
-        <h3 class="yt-name">載入中...</h3>
-        <span class="sub-text">前往 YouTube 頻道</span>
-      </div>
-    </a>
+    </div>    
   </div>
-</div>
+</div>  
 
 
 <div id="cookie-notice" class="cookie-notice">
